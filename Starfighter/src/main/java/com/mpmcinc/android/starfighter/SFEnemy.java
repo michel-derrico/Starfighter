@@ -23,7 +23,8 @@ public class SFEnemy {
     public int enemyType = 0;
 
     public float lockOnPosX = 0f;
-    public float lockOnPosY =0f;
+    public float lockOnPosY = 0f;
+    public boolean isLockedOn = false;
 
     private Random randomPos = new Random();
 

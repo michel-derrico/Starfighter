@@ -28,7 +28,6 @@ public class SFEngine {
     public static final int GAME_THREAD_FPS_SLEEP = (1000/60);
     public static Display display;
     public static int playerFlightAction = 0;
-    public static final int PLAYER_SHIP = R.drawable.good_sprite;
     public static final int PLAYER_BANK_LEFT_1 = 1;
     public static final int PLAYER_RELEASE = 3;
     public static final int PLAYER_BANK_RIGHT_1 = 4;
@@ -59,6 +58,12 @@ public class SFEngine {
     public static final float BEZIER_Y_3 = 1.5f;
     public static final float BEZIER_Y_4 = 2.6f;
 
+    public static final int WEAPONS_SHEET = R.drawable.destruction;
+    public static final int PLAYER_SHIELDS = 5;
+    public static final int SCOUT_SHIELDS = 3;
+    public static final int INTERCEPTOR_SHIELDS = 1;
+    public static final int WARSHIP_SHIELDS = 5;
+    public static final float PLAYER_BULLET_SPEED = .125f;
 
     public static SFEngine getInstance() {
         return ourInstance;

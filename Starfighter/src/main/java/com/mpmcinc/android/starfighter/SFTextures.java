@@ -15,10 +15,10 @@ import javax.microedition.khronos.opengles.GL10;
  */
 public class SFTextures {
 
-    private int[] textures = new int[1];
+    private int[] textures = new int[2];
 
     public SFTextures(GL10 gl) {
-        gl.glGenTextures(1,textures,0);
+        gl.glGenTextures(2,textures,0);
     }
 
     public int[] loadTexture(GL10 gl, int texture, Context context, int textureNumber ){

@@ -7,33 +7,24 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.opengles.GL10;
 
 /**
- * Created by michel on 13-09-23.
+ * Created by michel on 13-10-08.
  */
-public class SFGoodGuy {
+public class SFWeapon {
 
-    public boolean isDestroyed = false;
+    public float posY = 0f;
+    public float posX = 0f;
+    public boolean shotFired = false;
+
+    private float vertices[] = {0f,0f,0f,1f,0f,0f,1f,1f,0f,0f,1f,0f,};
+
+    private float texture[] = {0f,0f,.25f,0f,.25f,.25f,0f,.25f,};
+    private byte indices[] = {0,1,2,0,2,3,};
+
     private FloatBuffer vertexBuffer;
     private FloatBuffer textureBuffer;
     private ByteBuffer  indexBuffer;
 
-    private float vertices[] = {
-            0f, 0f, 0f
-           ,1f,0f,0f
-            ,1f,1f,0f
-            ,0f,1f,0f,
-    };
-
-    private float texture[] = {
-            0f,0f
-           ,0.25f,0f
-           ,0.25f,0.25f
-           ,0f,0.25f,
-    };
-
-    private byte indices[] = { 0,1,2, 0,2,3,};
-
-
-    public SFGoodGuy() {
+    public SFWeapon() {
         ByteBuffer byteBuf = ByteBuffer.allocateDirect(vertices.length*4);
         byteBuf.order(ByteOrder.nativeOrder());
         vertexBuffer = byteBuf.asFloatBuffer();
@@ -52,7 +43,7 @@ public class SFGoodGuy {
     }
 
     public void draw(GL10 gl, int[] spriteSheet) {
-        gl.glBindTexture(GL10.GL_TEXTURE_2D, spriteSheet[0]);
+        gl.glBindTexture(GL10.GL_TEXTURE_2D, spriteSheet[1]);
         gl.glFrontFace(GL10.GL_CCW);
         gl.glEnable(GL10.GL_CULL_FACE);
         gl.glCullFace(GL10.GL_BACK);
@@ -69,5 +60,6 @@ public class SFGoodGuy {
         gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
         gl.glDisable(GL10.GL_CULL_FACE);
     }
+
 
 }

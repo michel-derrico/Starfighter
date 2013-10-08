@@ -14,8 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b1b0b11-d004-4f28-a50a-ce8dda5781cb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Starfighter/src/main/res/drawable-nodpi/destruction.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFWeapon.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Starfighter/build/res/all/debug/drawable-nodpi/good_sprite.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Starfighter/build/source/r/debug/com/mpmcinc/android/starfighter/R.java" afterPath="$PROJECT_DIR$/Starfighter/build/source/r/debug/com/mpmcinc/android/starfighter/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEnemy.java" afterPath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEnemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEngine.java" afterPath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEngine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGameRenderer.java" afterPath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGameRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGoodGuy.java" afterPath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGoodGuy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFTextures.java" afterPath="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFTextures.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Starfighter.iws" />
@@ -98,7 +105,7 @@
       <file leaf-file-name="SFGoodGuy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGoodGuy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+            <state line="13" column="39" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,7 +116,7 @@
       <file leaf-file-name="SFTextures.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFTextures.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="855">
+            <state line="20" column="26" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="855">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,20 +124,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SFBackground.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFBackground.java">
+      <file leaf-file-name="SFEngine.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="0" selection-start="2567" selection-end="3507" vertical-scroll-proportion="0.0" vertical-offset="1260" max-vertical-offset="1755">
+            <state line="31" column="46" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="1380">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SFEngine.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEngine.java">
+      <file leaf-file-name="SFWeapon.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFWeapon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="22" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.0" vertical-offset="366" max-vertical-offset="1305">
-              <folding />
+            <state line="45" column="58" selection-start="1384" selection-end="1384" vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="1065">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,7 +147,7 @@
       <file leaf-file-name="SFEnemy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEnemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="29" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="1755">
+            <state line="41" column="16" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="2055">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,8 +158,10 @@
       <file leaf-file-name="SFGameRenderer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGameRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="22" selection-start="2438" selection-end="2438" vertical-scroll-proportion="0.76516634" vertical-offset="614" max-vertical-offset="5385">
-              <folding />
+            <state line="143" column="47" selection-start="5243" selection-end="5243" vertical-scroll-proportion="0.4463972" vertical-offset="1891" max-vertical-offset="6780">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -537,7 +548,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Starfighter/src/main/res/layout/fadein.xml" />
         <option value="$PROJECT_DIR$/Starfighter/src/main/res/layout/fadeout.xml" />
         <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFMusic.java" />
         <option value="$PROJECT_DIR$/Starfighter/src/main/res/layout/activity_main.xml" />
@@ -548,9 +558,10 @@
         <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/StarfighterActivity.java" />
         <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGame.java" />
         <option value="$PROJECT_DIR$/Starfighter/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFTextures.java" />
-        <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEngine.java" />
+        <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFWeapon.java" />
         <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGoodGuy.java" />
+        <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEngine.java" />
+        <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFTextures.java" />
         <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEnemy.java" />
         <option value="$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGameRenderer.java" />
       </list>
@@ -560,7 +571,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
+    <option name="x" value="2" />
     <option name="y" value="22" />
     <option name="width" value="1454" />
     <option name="height" value="943" />
@@ -1043,7 +1054,11 @@
       <created>1381240956792</created>
       <updated>1381240956792</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Chapter 7 changes:&#10;  - Add AI for Enemies&#10;  - Add moveEnemy()">
+      <created>1381244216405</created>
+      <updated>1381244216405</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1067,7 +1082,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="22" width="1454" height="943" extended-state="0" />
+    <frame x="2" y="22" width="1454" height="943" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1080,14 +1095,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24005681" sideWeight="0.25516403" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928312" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24005681" sideWeight="0.25516403" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32928312" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25880924" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928312" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25880924" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883522" sideWeight="0.6707169" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928312" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24928977" sideWeight="0.52247876" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883522" sideWeight="0.52247876" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2109375" sideWeight="0.6707169" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2109375" sideWeight="0.7411908" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928312" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1106,25 +1121,13 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Chapter 6 changes:&#10;  - Refactored Texture loading into SFTextures.java&#10;  - Created SFEnemy class to manage enemy ships" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chapter 6 changes:&#10;  - Refactored Texture loading into SFTextures.java&#10;  - Created SFEnemy class to manage enemy ships" />
+    <MESSAGE value="Chapter 7 changes:&#10;  - Add AI for Enemies&#10;  - Add moveEnemy()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chapter 7 changes:&#10;  - Add AI for Enemies&#10;  - Add moveEnemy()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFMusic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="22" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.6641791" vertical-offset="708" max-vertical-offset="1110" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Starfighter/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="34" column="38" selection-start="1400" selection-end="1400" vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="660" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Starfighter/src/main/res/layout/splashscreen.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -1189,9 +1192,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="58" selection-start="1384" selection-end="1384" vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="1065">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGoodGuy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+        <state line="13" column="39" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1200,14 +1212,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="22" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.0" vertical-offset="366" max-vertical-offset="1305">
+        <state line="31" column="46" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="1380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/javax/microedition/khronos/opengles/GL10.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="333" column="9" selection-start="9921" selection-end="9921" vertical-scroll-proportion="0.33333334" vertical-offset="4786" max-vertical-offset="7425">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFTextures.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="855">
+        <state line="20" column="26" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="855">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1216,7 +1235,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFEnemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="1755">
+        <state line="41" column="16" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="2055">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1225,8 +1244,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Starfighter/src/main/java/com/mpmcinc/android/starfighter/SFGameRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="22" selection-start="2438" selection-end="2438" vertical-scroll-proportion="0.76516634" vertical-offset="614" max-vertical-offset="5385">
-          <folding />
+        <state line="143" column="47" selection-start="5243" selection-end="5243" vertical-scroll-proportion="0.4463972" vertical-offset="1891" max-vertical-offset="6780">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -20,6 +20,7 @@ public class SFEnemy {
 
     public int attackDirection = 0;
     public boolean isDestroyed = false;
+    public int     damage = 0;
     public int enemyType = 0;
 
     public float lockOnPosX = 0f;
@@ -38,6 +39,25 @@ public class SFEnemy {
 
     private byte indices[] = {0,1,2,0,2,3,};
 
+    public void applyDamage() {
+        damage++;
+        switch (enemyType) {
+            case SFEngine.TYPE_INTERCEPTOR:
+                if (damage == SFEngine.INTERCEPTOR_SHIELDS)
+                    isDestroyed = true;
+                break;
+            case SFEngine.TYPE_SCOUT:
+                if (damage == SFEngine.SCOUT_SHIELDS)
+                    isDestroyed = true;
+                break;
+
+            case SFEngine.TYPE_WARSHIP:
+                if (damage == SFEngine.WARSHIP_SHIELDS)
+                    isDestroyed = true;
+                break;
+        }
+
+    }
     public SFEnemy(int type, int direction) {
         enemyType = type;
         attackDirection = direction;

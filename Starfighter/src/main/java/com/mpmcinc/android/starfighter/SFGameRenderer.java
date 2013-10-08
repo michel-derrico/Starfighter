@@ -27,8 +27,44 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
     private SFEnemy[] enemies = new SFEnemy[SFEngine.TOTAL_INTERCEPTORS+SFEngine.TOTAL_SCOUTS+SFEngine.TOTAL_WARSHIPS-1];
     private SFTextures textureLoader;
     private int[] spriteSheets = new int[2];
+    private SFWeapon[] playerFire = new SFWeapon[4];
 
     private Random randomPos = new Random();
+
+    private void detectCollisions() {
+        for (int i = 0; i < 3; i++) {
+
+            if (playerFire[i].shotFired) {
+
+                for (int j = 0; j < enemies.length-1 ; j++)
+                {
+                    if (!enemies[j].isDestroyed && enemies[j].posY < 4.25) {
+
+                        if ((playerFire[i].posY >= enemies[j].posY-1 &&
+                                playerFire[i].posX <= enemies[j].posX+1 &&
+                                playerFire[i].posX >= enemies[j].posX -1 )) {
+                            int nextShot = 0;
+                            enemies[j].applyDamage();
+                            playerFire[i].shotFired = false;
+                            if (i == 3) {
+                                nextShot = 0;
+                            }
+                            else
+                            {
+                                nextShot = i +1;
+                            }
+                            if (playerFire[nextShot].shotFired == false) {
+                                playerFire[nextShot].shotFired = true;
+                                playerFire[nextShot].posX = SFEngine.playerBankPosX;
+                                playerFire[nextShot].posY = 1.25f;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
     private void initializeInterceptors() {
 
         for (int i = 0; i < SFEngine.TOTAL_INTERCEPTORS; i++) {
@@ -56,6 +92,53 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
 
     }
 
+    private void initializePlayerWeapons() {
+        for (int i = 0; i < 4; i++) {
+            playerFire[i] = new SFWeapon();
+        }
+        playerFire[0].shotFired = true;
+        playerFire[0].posX = SFEngine.playerBankPosX;
+        playerFire[0].posY = 1.25f;
+    }
+
+    private void firePlayerWeapon(GL10 gl) {
+        for (int i = 0 ; i < 4 ; i++) {
+            if (playerFire[i].shotFired) {
+                int nextShot = 0;
+
+                if (playerFire[i].posY > 4.25) {
+                    playerFire[i].shotFired = false;
+                }
+                else {
+                    if (playerFire[i].posY >2) {
+                        if (i==3) {
+                            nextShot = 0;
+                        }
+                        else {
+                            nextShot = i+1;
+                        }
+                        if (playerFire[nextShot].shotFired == false) {
+                            playerFire[nextShot].shotFired = true;
+                            playerFire[nextShot].posX = SFEngine.playerBankPosX;
+                            playerFire[nextShot].posY = 1.25f;
+                        }
+                    }
+                    playerFire[i].posY += SFEngine.PLAYER_BULLET_SPEED;
+                    gl.glMatrixMode(GL10.GL_MODELVIEW);
+                    gl.glLoadIdentity();
+                    gl.glPushMatrix();
+                    gl.glScalef(.25f,.25f,0f);
+                    gl.glTranslatef(playerFire[i].posX,playerFire[i].posY,0f);
+                    gl.glMatrixMode(GL10.GL_TEXTURE);
+                    gl.glLoadIdentity();
+                    gl.glTranslatef(0f,0f,0f);
+                    playerFire[i].draw(gl,spriteSheets);
+                    gl.glPopMatrix();
+                    gl.glLoadIdentity();
+                }
+            }
+        }
+    }
     @Override
     public void onDrawFrame(GL10 gl) {
         loopStart = System.currentTimeMillis();
@@ -71,6 +154,7 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
         scrollBackground2(gl);
         movePlayer(gl);
         moveEnemy(gl);
+        detectCollisions();
 
         gl.glEnable(GL10.GL_BLEND);
         gl.glBlendFunc(GL10.GL_ONE, GL10.GL_ONE_MINUS_SRC_ALPHA);
@@ -131,10 +215,11 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
         initializeInterceptors();
         initializeScouts();
         initializeWarships();
+        initializePlayerWeapons();
 
         textureLoader = new SFTextures(gl);
         spriteSheets = textureLoader.loadTexture(gl,SFEngine.CHARACTER_SHEET,SFEngine.context,1);
-
+        spriteSheets = textureLoader.loadTexture(gl,SFEngine.WEAPONS_SHEET,SFEngine.context,2);
         gl.glEnable(GL10.GL_TEXTURE_2D);
         gl.glClearDepthf(1.0f);
         gl.glEnable(GL10.GL_DEPTH_TEST);
@@ -148,98 +233,101 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
     }
 
     public void movePlayer(GL10 gl){
-        switch(SFEngine.playerFlightAction){
-            case SFEngine.PLAYER_BANK_LEFT_1:
-                gl.glMatrixMode(GL10.GL_MODELVIEW);
-                gl.glLoadIdentity();
-                gl.glPushMatrix();
-                gl.glScalef(.25f,.25f,1f);
-                if (SFEngine.playerBankPosX > 0) {
-                    SFEngine.playerBankPosX -= SFEngine.PLAYER_BANK_SPEED;
-                    gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
-                    gl.glMatrixMode(GL10.GL_TEXTURE);
+        if (!player1.isDestroyed) {
+
+            switch(SFEngine.playerFlightAction){
+                case SFEngine.PLAYER_BANK_LEFT_1:
+                    gl.glMatrixMode(GL10.GL_MODELVIEW);
                     gl.glLoadIdentity();
-                    if (goodGuyBankFrames >= SFEngine.PLAYER_FRAMES_BETWEEN_ANI) {
-                        gl.glTranslatef(0.0f,0.25f,0f);
+                    gl.glPushMatrix();
+                    gl.glScalef(.25f,.25f,1f);
+                    if (SFEngine.playerBankPosX > 0) {
+                        SFEngine.playerBankPosX -= SFEngine.PLAYER_BANK_SPEED;
+                        gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
+                        gl.glMatrixMode(GL10.GL_TEXTURE);
+                        gl.glLoadIdentity();
+                        if (goodGuyBankFrames >= SFEngine.PLAYER_FRAMES_BETWEEN_ANI) {
+                            gl.glTranslatef(0.0f,0.25f,0f);
+                        }
+                        else {
+                            gl.glTranslatef(0.75f,0f,0f);
+                        }
+
+                        goodGuyBankFrames++;
                     }
                     else {
-                        gl.glTranslatef(0.75f,0f,0f);
+                        gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
+                        gl.glMatrixMode(GL10.GL_TEXTURE);
+                        gl.glLoadIdentity();
+                        gl.glTranslatef(0f,0f,0f);
                     }
+                    player1.draw(gl,spriteSheets);
+                    gl.glPopMatrix();
+                    gl.glLoadIdentity();
+                    break;
+                case SFEngine.PLAYER_BANK_RIGHT_1:
+                    gl.glMatrixMode(GL10.GL_MODELVIEW);
+                    gl.glLoadIdentity();
+                    gl.glPushMatrix();
+                    gl.glScalef(.25f,.25f,1f);
+                    if (SFEngine.playerBankPosX < 3) {
+                        SFEngine.playerBankPosX += SFEngine.PLAYER_BANK_SPEED;
+                        gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
+                        gl.glMatrixMode(GL10.GL_TEXTURE);
+                        gl.glLoadIdentity();
+                        if (goodGuyBankFrames >= SFEngine.PLAYER_FRAMES_BETWEEN_ANI) {
+                            gl.glTranslatef(0.50f,0.0f,0f);
+                        }
+                        else {
+                            gl.glTranslatef(0.25f,0.0f,0f);
+                        }
 
-                    goodGuyBankFrames++;
-                }
-                else {
+                        goodGuyBankFrames++;
+                    }
+                    else {
+                        gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
+                        gl.glMatrixMode(GL10.GL_TEXTURE);
+                        gl.glLoadIdentity();
+                        gl.glTranslatef(0f,0f,0f);
+                    }
+                    player1.draw(gl,spriteSheets);
+                    gl.glPopMatrix();
+                    gl.glLoadIdentity();
+                    break;
+                case SFEngine.PLAYER_RELEASE:
+                    gl.glMatrixMode(GL10.GL_MODELVIEW);
+                    gl.glLoadIdentity();
+                    gl.glPushMatrix();
+                    gl.glScalef(.25f,.25f,1f);
                     gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
+
                     gl.glMatrixMode(GL10.GL_TEXTURE);
                     gl.glLoadIdentity();
                     gl.glTranslatef(0f,0f,0f);
-                }
-                player1.draw(gl,spriteSheets);
-                gl.glPopMatrix();
-                gl.glLoadIdentity();
-                break;
-            case SFEngine.PLAYER_BANK_RIGHT_1:
-                gl.glMatrixMode(GL10.GL_MODELVIEW);
-                gl.glLoadIdentity();
-                gl.glPushMatrix();
-                gl.glScalef(.25f,.25f,1f);
-                if (SFEngine.playerBankPosX < 3) {
-                    SFEngine.playerBankPosX += SFEngine.PLAYER_BANK_SPEED;
-                    gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
-                    gl.glMatrixMode(GL10.GL_TEXTURE);
+                    player1.draw(gl,spriteSheets);
+                    gl.glPopMatrix();
                     gl.glLoadIdentity();
-                    if (goodGuyBankFrames >= SFEngine.PLAYER_FRAMES_BETWEEN_ANI) {
-                        gl.glTranslatef(0.50f,0.0f,0f);
-                    }
-                    else {
-                        gl.glTranslatef(0.25f,0.0f,0f);
-                    }
 
                     goodGuyBankFrames++;
-                }
-                else {
+                    break;
+                default:
+                    gl.glMatrixMode(GL10.GL_MODELVIEW);
+                    gl.glLoadIdentity();
+                    gl.glPushMatrix();
+                    gl.glScalef(.25f,.25f,1f);
                     gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
+
                     gl.glMatrixMode(GL10.GL_TEXTURE);
                     gl.glLoadIdentity();
                     gl.glTranslatef(0f,0f,0f);
-                }
-                player1.draw(gl,spriteSheets);
-                gl.glPopMatrix();
-                gl.glLoadIdentity();
-                break;
-            case SFEngine.PLAYER_RELEASE:
-                gl.glMatrixMode(GL10.GL_MODELVIEW);
-                gl.glLoadIdentity();
-                gl.glPushMatrix();
-                gl.glScalef(.25f,.25f,1f);
-                gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
+                    player1.draw(gl,spriteSheets);
+                    gl.glPopMatrix();
+                    gl.glLoadIdentity();
 
-                gl.glMatrixMode(GL10.GL_TEXTURE);
-                gl.glLoadIdentity();
-                gl.glTranslatef(0f,0f,0f);
-                player1.draw(gl,spriteSheets);
-                gl.glPopMatrix();
-                gl.glLoadIdentity();
-
-                goodGuyBankFrames++;
-                break;
-            default:
-                gl.glMatrixMode(GL10.GL_MODELVIEW);
-                gl.glLoadIdentity();
-                gl.glPushMatrix();
-                gl.glScalef(.25f,.25f,1f);
-                gl.glTranslatef(SFEngine.playerBankPosX,0f,0f);
-
-                gl.glMatrixMode(GL10.GL_TEXTURE);
-                gl.glLoadIdentity();
-                gl.glTranslatef(0f,0f,0f);
-                player1.draw(gl,spriteSheets);
-                gl.glPopMatrix();
-                gl.glLoadIdentity();
-
-                break;
+                    break;
+            }
+            firePlayerWeapon(gl);
         }
-
     }
 
     private void moveEnemy(GL10 gl) {
@@ -250,7 +338,7 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
 
                 switch (enemies[i].enemyType) {
                     case SFEngine.TYPE_INTERCEPTOR:
-                        if (enemies[i].posY <= 0) {
+                        if (enemies[i].posY < 0) {
                             enemies[i].posX = randomPos.nextFloat()*3;
                             enemies[i].posY = (randomPos.nextFloat()*4)+4;
                             enemies[i].isLockedOn = false;
@@ -271,13 +359,13 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
                                 enemies[i].incrementXtoTarget = (float) ((enemies[i].lockOnPosX-enemies[i].posX)/(enemies[i].posY/(SFEngine.INTERCEPTOR_SPEED*4)));
 
                             }
-                            enemies[i].posY -= SFEngine.INTERCEPTOR_SPEED*4;
+                            enemies[i].posY -= (SFEngine.INTERCEPTOR_SPEED*4);
                             enemies[i].posX += enemies[i].incrementXtoTarget;
                         }
                         gl.glTranslatef(enemies[i].posX,enemies[i].posY,0f);
                         gl.glMatrixMode(GL10.GL_TEXTURE);
                         gl.glLoadIdentity();
-                        gl.glTranslatef(0.25f,0.25f,0f);
+                        gl.glTranslatef(0.25f, 0.25f, 0f);
 
                         break;
                     case SFEngine.TYPE_SCOUT:
@@ -311,12 +399,12 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
                         gl.glTranslatef(enemies[i].posX,enemies[i].posY,0f);
                         gl.glMatrixMode(GL10.GL_TEXTURE);
                         gl.glLoadIdentity();
-                        gl.glTranslatef(.75f,.25f,0f);
+                        gl.glTranslatef(.50f, .25f, 0f);
 
                         break;
                     case SFEngine.TYPE_WARSHIP:
 
-                        if (enemies[i].posY <= 0) {
+                        if (enemies[i].posY < 0) {
                             enemies[i].posX = randomPos.nextFloat()*3;
                             enemies[i].posY = (randomPos.nextFloat()*4)+4;
                             enemies[i].isLockedOn = false;
@@ -337,13 +425,13 @@ public class SFGameRenderer implements GLSurfaceView.Renderer {
                                 enemies[i].incrementXtoTarget = (float) ((enemies[i].lockOnPosX-enemies[i].posX)/(enemies[i].posY/(SFEngine.WARSHIP_SPEED*4)));
 
                             }
-                            enemies[i].posY -= SFEngine.WARSHIP_SPEED*2;
+                            enemies[i].posY -= (SFEngine.WARSHIP_SPEED*2);
                             enemies[i].posX += enemies[i].incrementXtoTarget;
                         }
                         gl.glTranslatef(enemies[i].posX,enemies[i].posY,0f);
                         gl.glMatrixMode(GL10.GL_TEXTURE);
                         gl.glLoadIdentity();
-                        gl.glTranslatef(0.5f,.25f,0f);
+                        gl.glTranslatef(0.75f, .25f, 0f);
                         break;
                 }
                 enemies[i].draw(gl,spriteSheets);

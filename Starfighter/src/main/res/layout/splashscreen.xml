@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+    <ImageView
+        android:id="@+id/splashScreenImage"
+        android:src="@drawable/starfighter"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY">
+    </ImageView>
+    <TextView
+        android:text="from Practical Android 4 Game Development"
+        android:id="@+id/creditsText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal|bottom">
+    </TextView>
+</FrameLayout>

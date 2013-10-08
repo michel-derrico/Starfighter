@@ -1,0 +1,27 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1380678155000 379 14a8570ab91cccc7ceb4de20f129ed025d5be08e /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$attr.class
+1380678155000 864 0ffaf60cd66d595856b51776f4d009ff0f52d534 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R.class
+1380678155000 1988 29e82a4f96f85bcb506afe4e7a819af9734ca49f /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFMusic.class
+1380678155000 1226 037ceaf8a2112bb4c11580edda5879a6382d1946 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFMainMenu$3.class
+1380678154000 3602 8513e20f3172543a959b683e14c8f8b52ec5d7be /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFBackground.class
+1380678154000 2069 958dbbfa909423acf749c2490fc2d2c1ab26b2bd /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFEngine.class
+1380678155000 432 ccd015968b49128774f9e095a239037de2fff556 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$raw.class
+1380678155000 738 e3cd3a4f0c3c0b44bbc0c263df53a7147019056a /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFGameView.class
+1380678155000 864 318eca2a986b2be50de0737c48a7516e512fd36a /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$drawable.class
+1380678155000 638 dcbc8cda586b62459fb0fe2e12affc6cb03b5ca9 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$id.class
+1380678155000 500 94ca949670f7de702309a5a8a8125000d2bea663 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$dimen.class
+1380678155000 1792 655ee6e22c14acdbe36f5a4f49d6a4f5c25f036a /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFMainMenu.class
+1380678155000 3602 ef55355236aaf470c0b9d649714ee969e9b08999 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFGoodGuy.class
+1380678155000 470 e5d2f8671995705b4035d12ae2653e68985ac379 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$style.class
+1380678155000 511 beb6ad63c207d514fb945098b7b8909aeee396e4 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$string.class
+1380678155000 4533 fac43e4526a106111425cd2b320ffafb939cceb5 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFGameRenderer.class
+1380678155000 492 5c895575d1a4be647ad5057f306a5c0a39a319b5 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/BuildConfig.class
+1380678155000 1090 646ff68016a0c9b1d1d7df56628651c2bdc621d4 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/StarfighterActivity$1.class
+1380678155000 1152 d3a5e48a37aaf59e06ef002504681f39e212f548 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFMainMenu$2.class
+1380678155000 1424 e24759334231339dbc3c57b710752bff192d739f /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/StarfighterActivity.class
+1380678155000 434 63ba175925ef1155d8b2cff3d27777b7d5110e95 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$menu.class
+1380678155000 539 7df7ebfba6d88411d7a42534ae31924ba9764087 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/R$layout.class
+1380678155000 1136 95412007658e834bac493780b3baaef3287d86c9 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFMainMenu$1.class
+1380678155000 1769 53fb2912b8db0f5c11ff7f61cf08e3113ad56b49 /Users/michel/Development/Android/starfighterProject/Starfighter/build/classes/debug/com/mpmcinc/android/starfighter/SFGame.class

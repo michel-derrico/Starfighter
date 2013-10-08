@@ -2,8 +2,6 @@ package com.mpmcinc.android.starfighter;
 
 import android.opengl.GLSurfaceView;
 
-import java.io.InputStream;
-
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 

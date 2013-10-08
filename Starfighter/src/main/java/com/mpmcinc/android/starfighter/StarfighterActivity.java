@@ -1,11 +1,11 @@
 package com.mpmcinc.android.starfighter;
 
-import android.content.Context;
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.os.Handler;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Menu;
 import android.view.WindowManager;
 
 public class StarfighterActivity extends Activity {

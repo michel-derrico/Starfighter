@@ -37,6 +37,29 @@ public class SFEngine {
     public static final float PLAYER_BANK_SPEED = 0.1f;
     public static float playerBankPosX = 1.75f;
 
+    public static int CHARACTER_SHEET = R.drawable.character_sprite;
+    public static int TOTAL_INTERCEPTORS = 10;
+    public static int TOTAL_SCOUTS = 15;
+    public static int TOTAL_WARSHIPS =5;
+    public static float INTERCEPTOR_SPEED = SCROLL_BACKGROUND_1 * 4f;
+    public static float SCOUT_SPEED = SCROLL_BACKGROUND_1 *6f;
+    public static float WARSHIP_SPEED = SCROLL_BACKGROUND_2*4f;
+    public static final int TYPE_INTERCEPTOR = 1;
+    public static final int TYPE_SCOUT = 2;
+    public static final int TYPE_WARSHIP = 3;
+    public static final int ATTACK_RANDOM = 0;
+    public static final int ATTACK_RIGHT=1;
+    public static final int ATTACK_LEFT =2;
+    public static final float BEZIER_X_1 = 0f;
+    public static final float BEZIER_X_2 = 1f;
+    public static final float BEZIER_X_3 = 2.5f;
+    public static final float BEZIER_X_4 = 3f;
+    public static final float BEZIER_Y_1 = 0f;
+    public static final float BEZIER_Y_2 = 2.4f;
+    public static final float BEZIER_Y_3 = 1.5f;
+    public static final float BEZIER_Y_4 = 2.6f;
+
+
     public static SFEngine getInstance() {
         return ourInstance;
     }
